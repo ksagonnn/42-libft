@@ -6,24 +6,16 @@
 /*   By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:45:56 by ksagon            #+#    #+#             */
-/*   Updated: 2021/10/12 17:18:18 by ksagon           ###   ########.fr       */
+/*   Updated: 2021/11/16 14:54:30 by ksagon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_toupper(char	*str)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 97 && str[i] <= 122)
-		{
-			str[i] = str[i] - 32;
-		}
-		i++;
-	}
-	return (str);
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	else
+		return (c);
 }

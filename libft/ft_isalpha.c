@@ -6,7 +6,7 @@
 /*   By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:25:37 by ksagon            #+#    #+#             */
-/*   Updated: 2021/10/14 15:20:08 by ksagon           ###   ########.fr       */
+/*   Updated: 2021/11/16 14:09:12 by ksagon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_isalpha(int c)
 
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

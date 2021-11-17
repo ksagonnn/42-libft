@@ -6,24 +6,15 @@
 /*   By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:46:34 by ksagon            #+#    #+#             */
-/*   Updated: 2021/10/12 17:18:15 by ksagon           ###   ########.fr       */
+/*   Updated: 2021/11/16 18:18:57 by ksagon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lift.h"
+#include"libft.h"
 
-char	*ft_tolower(char	*str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 97 && str[i] <= 122)
-		{
-			str[i] = str[i] - 32;
-		}
-		i++;
-	}
-	return (str);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }

@@ -6,11 +6,11 @@
 /*   By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:40:57 by ksagon            #+#    #+#             */
-/*   Updated: 2021/10/11 16:51:30 by ksagon           ###   ########.fr       */
+/*   Updated: 2021/11/16 14:13:50 by ksagon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 int	ft_isprint(int c)
 {

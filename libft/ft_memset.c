@@ -6,10 +6,21 @@
 /*   By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:42:05 by ksagon            #+#    #+#             */
-/*   Updated: 2021/10/12 16:36:18 by ksagon           ###   ########.fr       */
+/*   Updated: 2021/11/16 14:16:19 by ksagon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void ft_memset(unsigned char c, char *str)
+void	*ft_memset(void *a, int c, size_t len)
+{
+	char	*d;
+
+	d = (char *)a;
+	while (len > 0)
+	{
+		d[len - 1] = c;
+		len--;
+	}
+	return (a);
+}
