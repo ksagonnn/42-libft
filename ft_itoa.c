@@ -1,48 +1,44 @@
-// header 42
+#include "libft.h"
 
-#include"stdio.h"
-
-static int ft_abs(int nbr)
+static size_t	ft_getlen(int nb)
 {
-	return ((nbr < 0) ? -nbr : nbr);
-}
+	int	len;
 
-static void ft_strrev(char *str)
-{
-	size_t	length;
-	size_t	i;
-	char	tmp;
-
-	length = ft_strlen(str);
-	i = 0;
-	while (i < lenght / 2)
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb != '\0')
 	{
-		tmp = str[i];
-		str[i] = str[length - i - 1];
-		str[length - i - 1] = tmp;
-		i++;
+		len++;
+		nb = nb / 10;
 	}
+	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
+	int		len;
 	char	*str;
-	int	is_neg;
-	size_t	length;
+	long	nb;
 
-	is_neg = (n < 0);
-	if (!(str = ft_caloc(11 + is_neg, sizeof(*str))))
+	len = ft_getlen(n);
+	nb = n;
+	str = ((char *)malloc(sizeof(char) * len + 1));
+	if (str == NULL)
 		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	length = 0;
-	while (n != 0)
+	if (nb < 0)
 	{
-		str[length++] = '0' + ft_abs(n % 10);
-		n = (n / 10);
+		str[0] = '-';
+		nb = -nb;
 	}
-	if (is_neg)
-		str[length] = '-';
-	ft_strrev(str);
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb != '\0')
+	{
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
+	}
 	return (str);
 }
