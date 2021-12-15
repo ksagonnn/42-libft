@@ -1,53 +1,32 @@
-// header42
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ksagon <marvin@42lausanne.ch>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/01 15:25:47 by ksagon            #+#    #+#              #
+#    Updated: 2021/12/01 17:42:07 by ksagon           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = libft.a
+NAME    = libftprintf.a
 
-CC = gcc
+CFLAGS  = -Wall -Wextra -Werror
+RM      = rm -f
+CC      = gcc
+AR      = ar rcs
 
-CFLAGS = -Wall -Wextra -Werror
+$(NAME): $(OBJS)
+        $(AR) $(NAME) $(OBJS)
 
-SRC = ft_isalpha.c \
-	ft_isdigit.c \
-	ft_isalnum.c \
-	ft_isascii.c \
-	ft_isprint \
-	ft_strlen.c \
-	ft_memset.c \
-	ft_bzero.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_strlcpy.c \
-	ft_strlcat.c \
-	ft_toupper.c \
-	ft_tolower.c \
-	ft_strchr.c \
-	ft_strrchr.c \
-	ft_strncmp.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_strnstr.c \
-	ft_atoi.c \
-
-OBJ = $(SRC : .c = .o)
-
-$(NAME): includes/libft.h
-	$(CC) $(CFLAGS) -c $(SRC) $(HDDIRS)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-
-all: $(NAME)
-
-%.o: %.c
-	@gcc $(FLAG) -c $< -o $@
-
+all:    $(NAME)
 clean:
-	@rm -f $(OBJ)
-	@echo "OBJ deleted"
+	%(RM) $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(NAME) deleted"
+        $(RM) $(NAME)
 
-re: fclean all
+re:     fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re
